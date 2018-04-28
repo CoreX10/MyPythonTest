@@ -11,7 +11,7 @@ def guess():
         print('Value Error, Please try again.')
         guess()
     else:       
-        for i in range(1,7,1):  #设置猜测次数最多为6次
+        for i in range(1,7):  #设置猜测次数最多为6次
             #进行判断输入是否合理
             if type_number <= 20 and type_number >=1:
                 if type_number > _number:
