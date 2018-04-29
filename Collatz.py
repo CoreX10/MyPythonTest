@@ -1,5 +1,8 @@
 #This is a Collatz Program
 
+import sys
+import os
+
 #defind a collatz function
 def collatz(number):
     if number % 2 == 0:
@@ -9,14 +12,20 @@ def collatz(number):
     else:
         return 
 
+#defind a restart_program.
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+
 #type a number 
 print ('Please type a number:')
 #Avoid input ValueError
 try:
     type_number = int(input())
 except ValueError:
+    #when type Error data, Prompt and restart program.
     print ('Value Error, please try again.')
-    type_number = int(input())
+    restart_program()
 else:
     #begin loop
     while True:
